@@ -50,7 +50,7 @@ Addition/Removal of Certificates
 --------------------------------
 
 PG&E Certifi adds support for overriding the root certificate bundle using the
-``CERT_PATH`` environment variable, for example:
+``CERT_PATH`` environment variable, for example::
 
     $ export CERT_PATH=~/etc/CombinedCA.cer
     $ python -c "import certifi; print(certifi.where())"
