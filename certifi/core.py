@@ -15,6 +15,8 @@ try:
     _CACERT_PATH = None
 
     def where() -> str:
+        if "PGE_CERT" in os.environ:
+            return os.environ["PGE_CERT"]
         # This is slightly terrible, but we want to delay extracting the file
         # in cases where we're inside of a zipimport situation until someone
         # actually calls where(), but we don't want to re-extract the file
