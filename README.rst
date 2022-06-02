@@ -49,7 +49,11 @@ recommended in production and therefore was removed at the end of 2018.
 Addition/Removal of Certificates
 --------------------------------
 
-Certifi does not support any addition/removal or other modification of the
-CA trust store content. This project is intended to provide a reliable and
-highly portable root of trust to python deployments. Look to upstream projects
-for methods to use alternate trust.
+PG&E Certifi adds support for overriding the root certificate bundle using the
+``CERT_PATH`` environment variable, for example:
+
+```sh
+$ export CERT_PATH=~/etc/CombinedCA.cer
+$ python -c "import certifi; print(certifi.where())"
+/Users/K0SF/etc/CombinedCA.cer
+```
